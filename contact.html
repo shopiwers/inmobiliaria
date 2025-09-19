@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Contact - HomeSpace Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+ <link href="assets/img/logo-clear.png" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: HomeSpace
+  * Template URL: https://bootstrapmade.com/homespace-bootstrap-real-estate-template/
+  * Updated: Jul 05 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="contact-page">
+
+   <header id="header" class="header d-flex align-items-center sticky-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <img src="assets/img/logo-clear.png" alt="" />
+          <h1 class="sitename">Nexus Urbanos</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="about.html">Acerca de</a></li>
+            <li><a href="services.html">Servicios</a></li>
+            
+               <li><a href="contact.html">Mapa de inmuebles</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Contact</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Contact</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Contact 2 Section -->
+    <section id="contact-2" class="contact-2 section">
+
+      <!-- Map Section -->
+      <div class="map-container mb-5">
+        <!-- Reemplaza la sección del mapa por este bloque interactivo -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+
+<div id="map-cucuta" style="width: 100%; height: 500px; border-radius: 12px; overflow: hidden;"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+<script>
+  // Coordenadas aproximadas del centro de Cúcuta
+  const cucutaCenter = [7.8939, -72.5078];
+
+  // Genera 100 ubicaciones aleatorias en Cúcuta
+  function randomLocations(center, count, radiusKm) {
+    const locations = [];
+    for (let i = 0; i < count; i++) {
+      // Genera un punto aleatorio dentro de un círculo de radio radiusKm
+      const angle = Math.random() * Math.PI * 2;
+      const distance = Math.random() * radiusKm;
+      // 1 grado latitud ~ 111km, longitud depende de latitud
+      const dx = distance * Math.cos(angle) / 111;
+      const dy = distance * Math.sin(angle) / (111 * Math.cos(center[0] * Math.PI / 180));
+      const lat = center[0] + dx;
+      const lng = center[1] + dy;
+      // Valor aleatorio entre $180.000.000 y $800.000.000
+      const value = Math.floor(Math.random() * (800000000 - 180000000 + 1)) + 180000000;
+      locations.push({ lat, lng, value, id: i + 1 });
+    }
+    return locations;
+  }
+
+  const locations = randomLocations(cucutaCenter, 100, 8); // 8km de radio
+
+  // Inicializa el mapa
+  const map = L.map('map-cucuta').setView(cucutaCenter, 12);
+
+  // Capa base de OpenStreetMap
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Agrupador de marcadores
+  const markers = L.markerClusterGroup();
+
+  // Crea los marcadores
+  locations.forEach(loc => {
+    const marker = L.marker([loc.lat, loc.lng]);
+    marker.bindPopup(
+      `<strong>Propiedad #${loc.id}</strong><br>
+      Valor: $${loc.value.toLocaleString('es-CO')}
+      `
+    );
+    marker.bindTooltip(`$${loc.value.toLocaleString('es-CO')}`, {permanent: false});
+    markers.addLayer(marker);
+  });
+
+  map.addLayer(markers);
+</script>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Contact Info -->
+        <div class="row g-4 mb-5" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-md-6">
+            <div class="contact-info-card">
+              <div class="icon-box">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div class="info-content">
+                <h4>Localización</h4>
+                <p>Prados Norte</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="contact-info-card">
+              <div class="icon-box">
+                <i class="bi bi-telephone"></i>
+              </div>
+              <div class="info-content">
+                <h4>Teléfono &amp; Email</h4>
+                <p>+57 (319) 441-6135</p>
+                <p>connect@example.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <!-- <div class="row justify-content-center mb-5" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-10">
+            <div class="contact-form-wrapper">
+              <h2 class="text-center mb-4">Send a Message</h2>
+
+              <form action="forms/contact.php" method="post" class="php-email-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="name" placeholder="Your Name" required="">
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="email" class="form-control" name="email" placeholder="Email Address" required="">
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-group">
+                      <textarea class="form-control" name="message" placeholder="Your Message" rows="6" required=""></textarea>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                  </div>
+
+                  <div class="col-12 text-center">
+                    <button type="submit" class="btn-submit">SEND MESSAGE</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+
+    </section><!-- /Contact 2 Section -->
+
+  </main>
+
+   <footer id="footer" class="footer accent-background">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-7 col-md-12 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">Inmobiliaria</span>
+            </a>
+            <p>
+              Te ayudamos a hacer realidad el proyecto de vida que siempre imaginaste. 
+              Desde la compra de tu primer terreno hasta la construcción de tu hogar ideal, 
+              contamos con la experiencia y aliados que necesitas para comenzar.
+
+
+            </p>
+            <div class="social-links d-flex mt-4">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <!-- <div class="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+            </ul>
+          </div> -->
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Nuestros Servicios</h4>
+            <ul>
+              <li><a>Asesoría Inmobiliaria</a></li>
+              <li><a>Compra y Venta de Propiedades</a></li>
+              <li><a>Créditos</a></li>
+              <li><a>Acompañamiento legal</a></li>
+              
+            </ul>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-12 footer-contact text-center text-md-start"
+          >
+            <h4>Contactanos</h4>
+            <p>Norte de Santander</p>
+            <p>Cúcuta</p>
+            <p>Prados Norte</p>
+            <p class="mt-4">
+              <strong>Telefono:</strong> <span>+57 3194416135</span>
+            </p>
+            <p><strong>Email:</strong> <span>info@example.com</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span>
+          <strong class="px-1 sitename">Inmobiliaria</strong>
+          <span>Todos los derechos reservados</span>
+        </p>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by <a href="https://bootstrapmade.com/">apps</a>
+        </div>
+      </div>
+    </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

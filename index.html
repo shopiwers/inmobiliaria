@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Nexus</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <link href="assets/img/logo-clear.png" rel="icon" />
+    <link href="assets/img/logo-clear.png" rel="apple-touch-icon" />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <link href="assets/css/main.css" rel="stylesheet" />
+  </head>
+
+  <body class="index-page">
+    <!-- <?php include 'includes/header.html'; ?> -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <img src="assets/img/logo-clear.png" alt="" />
+          <h1 class="sitename">Nexus Urbanos</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="about.html">Acerca de</a></li>
+            <li><a href="services.html">Servicios</a></li>
+
+            <li><a href="contact.html">Mapa de inmuebles</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Hero Section -->
+
+      <section id="hero" class="hero section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="hero-wrapper">
+            <div class="row g-4">
+              <div class="col-lg-7">
+                <div
+                  class="hero-content"
+                  data-aos="zoom-in"
+                  data-aos-delay="200"
+                >
+                  <div class="content-header">
+                    <span class="hero-label2">
+                      <i class="bi bi-house-heart"></i>
+                      Tu hogar ideal te espera
+                    </span>
+                    <h1>Encuentra tu propiedad ideal con asesoría experta</h1>
+                    <p>
+                      Conéctate con profesionales inmobiliarios verificados.
+                    </p>
+                  </div>
+
+                  <!-- <div
+                    class="search-container"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
+                    <div class="search-header">
+                      <h3>Comienza tu búsqueda de propiedades</h3>
+                      <p>Descubre miles de anuncios verificado</p>
+                    </div>
+
+                    <form action="" class="property-search-form">
+                      <div class="search-grid">
+                        <div class="search-field">
+                          <label for="search-location" class="field-label"
+                            >Ubicación</label
+                          >
+                          <input
+                            type="text"
+                            id="search-location"
+                            name="location"
+                            placeholder="Ingresa ciudad o barrio"
+                            required=""
+                          />
+                          <i class="bi bi-geo-alt field-icon"></i>
+                        </div>
+
+                        <div class="search-field">
+                          <label for="search-type" class="field-label"
+                            >Tipo de propiedad</label
+                          >
+                          <select
+                            id="search-type"
+                            name="property_type"
+                            required=""
+                          >
+                            <option value="">Todos los tipos</option>
+                            <option value="house">Casa individual</option>
+                            <option value="apartment">Apartmento</option>
+                            <option value="condo">Condominio</option>
+                            <option value="villa">Villa</option>
+                            <option value="commercial">Comercial</option>
+                          </select>
+                          <i class="bi bi-building field-icon"></i>
+                        </div>
+
+                        <div class="search-field">
+                          <label for="search-budget" class="field-label">
+                            Rango de presupuesto</label
+                          >
+                          <select
+                            id="search-budget"
+                            name="price_range"
+                            required=""
+                          >
+                            <option value="">Cualquier precio</option>
+                            <option value="0-300000">Under $300K</option>
+                            <option value="300000-600000">$300K - $600K</option>
+                            <option value="600000-900000">$600K - $900K</option>
+                            <option value="900000-1500000">
+                              $900K - $1.5M
+                            </option>
+                            <option value="1500000+">Más de $1.5M</option>
+                          </select>
+                          <i class="bi bi-currency-dollar field-icon"></i>
+                        </div>
+
+                        <div class="search-field">
+                          <label for="search-rooms" class="field-label"
+                            >Dormitorios</label
+                          >
+                          <select id="search-rooms" name="bedrooms">
+                            <option value="">Cualquiera</option>
+                            <option value="1">1 Room</option>
+                            <option value="2">2 Rooms</option>
+                            <option value="3">3 Rooms</option>
+                            <option value="4">4 Rooms</option>
+                            <option value="5+">5+ Rooms</option>
+                          </select>
+                          <i class="bi bi-door-open field-icon"></i>
+                        </div>
+                      </div>
+
+                      <button type="submit" class="search-btn">
+                        <i class="bi bi-search"></i>
+                        <span>Buscar propiedades</span>
+                      </button>
+                    </form>
+                  </div> -->
+
+                  <div
+                    class="achievement-grid"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
+                  >
+                    <div class="achievement-item" style="background-color: #505a64;">
+                      <div class="achievement-number">
+                        <span
+                          data-purecounter-start="0"
+                          data-purecounter-end="80"
+                          data-purecounter-duration="1"
+                          class="purecounter"
+                        ></span
+                        >+
+                      </div>
+                      <span class="achievement-text" style="color: #fff;">Propiedades activas</span>
+                    </div>
+                    <div class="achievement-item"style="background-color: #505a64;">
+                      <div class="achievement-number">
+                        <span
+                          data-purecounter-start="0"
+                          data-purecounter-end="2"
+                          data-purecounter-duration="1"
+                          class="purecounter"
+                        ></span
+                        >+
+                      </div>
+                      <span class="achievement-text" style="color: #fff;">Agentes expertos</span>
+                    </div>
+                    <div class="achievement-item" style="background-color: #505a64;">
+                      <div class="achievement-number">
+                        <span
+                          data-purecounter-start="0"
+                          data-purecounter-end="98"
+                          data-purecounter-duration="1"
+                          class="purecounter"
+                        ></span
+                        >%
+                      </div>
+                      <span class="achievement-text"style="color: #fff;">Tasa de éxito</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Hero Content -->
+
+              <div class="col-lg-5">
+                <div
+                  class="hero-visual"
+                  data-aos="fade-left"
+                  data-aos-delay="400"
+                >
+                  <div class="visual-container">
+                    <div class="featured-property">
+                      <img
+                        src="assets/img/logoblancoM.jpeg"
+                        alt="Featured Property"
+                        class="img-fluid"
+                      />
+                      <div class="property-info">
+                        <!-- <div class="property-price">$925,000</div> -->
+                        <div class="property-details">
+                          <!-- <span
+                            ><i class="bi bi-geo-alt"></i> Distrito Centro</span
+                          > -->
+                          <!-- <span><i class="bi bi-house"></i> 4 Bed, 3 Bath</span> -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="overlay-images">
+                      <div class="overlay-img overlay-1">
+                        <img
+                          src="assets/img/real-estate/casa1.jpeg"
+                          alt="Interior View"
+                          class="img-fluid"
+                        />
+                      </div>
+                      <div class="overlay-img overlay-2">
+                        <img
+                          src="assets/img/real-estate/casa2.jpeg"
+                          alt="Exterior View"
+                          class="img-fluid"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="agent-card">
+                      <div class="agent-profile">
+                        <img
+                          src="assets/img/real-estate/agente01.jpeg"
+                          alt="Agent Profile"
+                          class="agent-photo"
+                        />
+                        <div class="agent-info">
+                          <h4>Andres Quintero</h4>
+                          <p>Asesor senior de propiedades</p>
+                          <div class="agent-rating">
+                            <div class="stars">
+                              <i class="bi bi-star-fill"></i>
+                              <i class="bi bi-star-fill"></i>
+                              <i class="bi bi-star-fill"></i>
+                              <i class="bi bi-star-fill"></i>
+                              <i class="bi bi-star-fill"></i>
+                            </div>
+                            <span class="rating-text">5.0 (94 reviews)</span>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="contact-agent-btn">
+                        <i class="bi bi-chat-dots"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Hero Visual -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Hero Section -->
+
+      <!-- Home About Section -->
+      <section id="home-about" class="home-about section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-5">
+            <div class="col-lg-5" data-aos="zoom-in" data-aos-delay="200">
+              <div class="image-gallery">
+                <div class="primary-image">
+                  <img
+                    src="assets/img/real-estate/casa05.jpg"
+                    alt="Modern Property"
+                    class="img-fluid"
+                  />
+                  <div class="experience-badge">
+                    <div class="badge-content">
+                      <div class="number">
+                        <span
+                          data-purecounter-start="0"
+                          data-purecounter-end="8"
+                          data-purecounter-duration="1"
+                          class="purecounter"
+                        ></span
+                        >+
+                      </div>
+                      <div class="text">Años<br />de experiencia</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="secondary-image">
+                  <img
+                    src="assets/img/real-estate/casa04.jpg"
+                    alt="Luxury Interior"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
+              <div class="content">
+                <div class="section-header">
+                  <span class="section-label">Acerca de nuestra empresa</span>
+                  <h2>Construyendo sueños, creando hogares desde 2007</h2>
+                </div>
+
+                <p>
+                  Te ayudamos a hacer realidad el proyecto de vida que siempre
+                  imaginaste. Haz de la compra de tu vivienda el tu hogar ideal,
+                  contamos con la experiencia y aliados que necesitas para
+                  comenzar.
+                </p>
+
+                <div class="achievements-list">
+                  <div class="achievement-item">
+                    <div class="achievement-icon">
+                      <i class="bi bi-house-door"></i>
+                    </div>
+                    <div class="achievement-content">
+                      <h4>
+                        <span
+                          data-purecounter-start="0"
+                          data-purecounter-end="52"
+                          data-purecounter-duration="2"
+                          class="purecounter"
+                        ></span
+                        >+ Propiedades Vendidas
+                      </h4>
+                      <p>Transacciones completadas con éxito</p>
+                    </div>
+                  </div>
+                  <div class="achievement-item">
+                    <div class="achievement-icon">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="achievement-content">
+                      <h4>
+                        <span
+                          data-purecounter-start="0"
+                          data-purecounter-end="98"
+                          data-purecounter-duration="1"
+                          class="purecounter"
+                        ></span
+                        >% Client Satisfaction
+                      </h4>
+                      <p>Clientes satisfechos nos recomiendan</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="action-section">
+                  <a href="about.html" class="btn-cta">
+                    <span>Descubre nuestra historia</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
+                  <div class="contact-info">
+                    <div class="contact-icon">
+                      <i class="bi bi-telephone"></i>
+                    </div>
+                    <div class="contact-details">
+                      <span>Descubre nuestra historia</span>
+                      <strong>+57 (319) 441-6135</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Home About Section -->
+
+      <!-- Featured Properties Section -->
+      <section id="featured-properties" class="featured-properties section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Propiedades destacadas</h2>
+          <p>
+            Explora una selección exclusiva de inmuebles cuidadosamente elegidos
+            por su ubicación, diseño y valor. Descubre oportunidades únicas que
+            se adaptan a tu estilo de vida, necesidades y presupuesto.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-5">
+            <div class="col-lg-8">
+              <div
+                class="featured-property-main"
+                data-aos="zoom-in"
+                data-aos-delay="200"
+              >
+                <div class="property-hero">
+                  <img
+                    src="assets/img/real-estate/casa1.jpg"
+                    alt="Residencia de lujo"
+                    class="img-fluid"
+                  />
+                  <div class="property-overlay">
+                    <div class="property-badge-main premium">Premium</div>
+                    <div class="property-stats">
+                      <div class="stat-item">
+                        <i class="bi bi-house-door"></i>
+                        <span>3 habitaciones</span>
+                      </div>
+                      <div class="stat-item">
+                        <i class="bi bi-droplet-fill"></i>
+                        <span>2 baños</span>
+                      </div>
+                      <div class="stat-item">
+                        <i class="bi bi-arrows-move"></i>
+                        <span>Casa esquinera 2 pisos, 42 m²</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="property-hero-content">
+                  <div class="property-header">
+                    <div class="property-info">
+                      <h2>
+                        <a href="property-details.html"
+                          >Casa Esquinera</a
+                        >
+                      </h2>
+                      <div class="property-address">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>Chinacota</span>
+                      </div>
+                    </div>
+                    <div class="property-price-main">$240'000,000</div>
+                  </div>
+                  <p class="property-description">
+                    Estacionamiento Conjunto cerrado con piscina y porteria
+                    vigilada
+                  </p>
+                  <div class="property-actions-main">
+                    <!-- <a href="property-details.html" class="btn-primary-custom"
+                      >Agendar visita</a
+                    > -->
+                    <!-- <a href="property-details.html" class="btn-outline-custom"
+                      >Ver galería</a
+                    > -->
+                    <div class="property-listing-info">
+                      <span class="listing-status for-sale">En venta</span>
+                      <span class="listing-date">Publicado hoy</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="properties-sidebar">
+                <div
+                  class="sidebar-property-card"
+                  data-aos="fade-left"
+                  data-aos-delay="300"
+                >
+                  <div class="sidebar-property-image">
+                    <img
+                      src="assets/img/real-estate/casa2.jpg"
+                      alt="Condominio moderno"
+                      class="img-fluid"
+                    />
+                    <div class="sidebar-property-badge hot">
+                      Oferta especial
+                    </div>
+                  </div>
+                  <div class="sidebar-property-content">
+                    <h4>
+                      <a href="property-details.html"
+                        >Casa Urb. Garcia herreros</a
+                      >
+                    </h4>
+                    <div class="sidebar-location">
+                      <i class="bi bi-pin-map"></i>
+                      <span>Cúcuta</span>
+                    </div>
+                    <div class="sidebar-specs">
+                      <span><i class="bi bi-house"></i> 3 Habitaciones</span>
+                      <span><i class="bi bi-droplet"></i> 1 baños</span>
+                      <span><i class="bi bi-rulers"></i> 84 m²</span>
+                    </div>
+                    <div class="sidebar-price-row">
+                      <div class="sidebar-price">$185'000,000</div>
+                      <!-- <a href="property-details.html" class="sidebar-btn"
+                        >Ver</a
+                      > -->
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="sidebar-property-card"
+                  data-aos="fade-left"
+                  data-aos-delay="400"
+                >
+                  <div class="sidebar-property-image">
+                    <img
+                      src="assets/img/real-estate/casa3.jpg"
+                      alt="Casa familiar"
+                      class="img-fluid"
+                    />
+                    <div class="sidebar-property-badge new">
+                      Nueva publicación
+                    </div>
+                  </div>
+                  <div class="sidebar-property-content">
+                    <h4>
+                      <a href="property-details.html"
+                        >Apartamento</a
+                      >
+                    </h4>
+                    <div class="sidebar-location">
+                      <i class="bi bi-pin-map"></i>
+                      <span>Pacific Blue</span>
+                    </div>
+                    <div class="sidebar-specs">
+                      <span><i class="bi bi-house"></i> 2 habitaciones</span>
+                      <span><i class="bi bi-droplet"></i> 2 baños</span>
+                      <span><i class="bi bi-rulers"></i> Sala comedor</span>
+                    </div>
+                    <div class="sidebar-price-row">
+                      <div class="sidebar-price">$170'000,000</div>
+                      <!-- <a href="property-details.html" class="sidebar-btn"
+                        >Ver</a
+                      > -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row gy-4 mt-4">
+            <div class="col-xl-6" data-aos="fade-up" data-aos-delay="600">
+              <div class="property-card-horizontal">
+                <div class="property-image-horizontal">
+                  <img
+                    src="assets/img/real-estate/casa4.jpg"
+                    alt="Penthouse"
+                    class="img-fluid"
+                  />
+                  <div class="property-badge-horizontal exclusive">
+                    Exclusivo
+                  </div>
+                </div>
+                <div class="property-content-horizontal">
+                  <h3>
+                    <a href="property-details.html">Margaritas, Cúcuta</a>
+                  </h3>
+                  <div class="property-location-horizontal">
+                    <i class="bi bi-geo-alt"></i>
+                    <span>, bocono</span>
+                  </div>
+                  <div class="property-features">
+                    <span class="feature"
+                      ><i class="bi bi-house"></i> 3 habitaciones</span
+                    >
+                    <span class="feature"
+                      ><i class="bi bi-droplet"></i> 2 baños</span
+                    >
+                    <span class="feature"
+                      ><i class="bi bi-rulers"></i> 100 m²</span
+                    >
+                  </div>
+                  <p>Porche para 2 carros Propiedad de terreno</p>
+                  <div class="property-footer-horizontal">
+                    <div class="property-price-horizontal">$135,000,000</div>
+                    <!-- <a href="property-details.html" class="btn-view-horizontal"
+                      >Ver detalles</a
+                    > -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-6" data-aos="fade-up" data-aos-delay="700">
+              <div class="property-card-horizontal">
+                <div class="property-image-horizontal">
+                  <img
+                    src="assets/img/real-estate/casa5.jpg"
+                    alt="Casa moderna"
+                    class="img-fluid"
+                  />
+                  <div class="property-badge-horizontal new">Nuevo</div>
+                </div>
+                <div class="property-content-horizontal">
+                  <h3>
+                    <a href="property-details.html">Torres de santa ines </a>
+                  </h3>
+                  <div class="property-location-horizontal">
+                    <i class="bi bi-geo-alt"></i>
+                    <span>Zona franca, Cúcuta</span>
+                  </div>
+                  <div class="property-features">
+                    <span class="feature"
+                      ><i class="bi bi-house"></i> 3 Habitaciones</span
+                    >
+                    <span class="feature"
+                      ><i class="bi bi-droplet"></i> 2 baños</span
+                    >
+                    <span class="feature"
+                      ><i class="bi bi-rulers"></i> 320 m²</span
+                    >
+                  </div>
+                  <p>Sala, Piscina, Portería vigilada, Ascensor</p>
+                  <div class="property-footer-horizontal">
+                    <div class="property-price-horizontal">$150'000,000</div>
+                    <!-- <a href="property-details.html" class="btn-view-horizontal"
+                      >Ver detalles</a
+                    > -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Featured Properties Section -->
+
+      <!-- Featured Services Section -->
+      <section id="featured-services" class="featured-services section">
+        <!-- Título de la sección -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Servicios destacados</h2>
+          <p>
+            Te ofrecemos una gama de servicios especializados para acompañarte
+            en cada etapa de tu proceso inmobiliario. Nuestro compromiso es
+            brindarte soluciones eficientes, confiables y personalizadas que se
+            adapten a tus necesidades.
+          </p>
+        </div>
+        <!-- Fin título de la sección -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row g-4">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="bi bi-search"></i>
+                </div>
+                <div class="service-info">
+                  <h3>
+                    <a href="service-details.html">Búsqueda de propiedades</a>
+                  </h3>
+                  <p>
+                    Encuentra la propiedad ideal.
+                  </p>
+                  <ul class="service-highlights">
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Acompañamiento personalizado
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Selección verificada y confiable
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Asesoría experta en todo momento
+                    </li>
+                  </ul>
+                  <!-- <a href="service-details.html" class="service-link">
+                    <span>Explorar ahora</span>
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a> -->
+                </div>
+                <div class="service-visual">
+                  <img
+                    src="assets/img/real-estate/property-interior-2.webp"
+                    class="img-fluid"
+                    alt="Búsqueda de propiedades"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Fin servicio -->
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="bi bi-calculator"></i>
+                </div>
+                <div class="service-info">
+                  <h3>
+                    <a href="service-details.html"
+                      >Asesoramiento legal y comercial</a
+                    >
+                  </h3>
+                  <p>
+                    Acompañamiento especializado.
+                  </p>
+                  <ul class="service-highlights">
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Acompañamiento especializado.
+
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Gestión de trámites notariales
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Asesoría en créditos hipotecarios
+                    </li>
+                  </ul>
+                  <!-- <a href="service-details.html" class="service-link">
+                    <span>Solicitar valoración</span>
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a> -->
+                </div>
+                <div class="service-visual">
+                  <img
+                    src="assets/img/real-estate/property-exterior-1.webp"
+                    class="img-fluid"
+                    alt="Valoración de propiedades"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Fin servicio -->
+          </div>
+
+          <div class="row g-4 mt-4">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="400">
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="bi bi-key"></i>
+                </div>
+                <div class="service-info">
+                  <h3>
+                    <a href="service-details.html">Credito libre Inversión</a>
+                  </h3>
+                  <p>
+                    Soluciones rapidas
+                  </p>
+                  <ul class="service-highlights">
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> prestamos con garantía hipotecaria
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i>Proceso rapido
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Prestamo a la medida
+                    </li>
+                  </ul>
+                  <!-- <a href="service-details.html" class="service-link">
+                    <span>Comenzar renta</span>
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a> -->
+                </div>
+                <div class="service-visual">
+                  <img
+                    src="assets/img/real-estate/property-interior-8.webp"
+                    class="img-fluid"
+                    alt="Renta de propiedades"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Fin servicio -->
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="500">
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="bi bi-shield-check"></i>
+                </div>
+                <div class="service-info">
+                  <h3>
+                    <a href="service-details.html">Venta de inmuebles</a>
+                  </h3>
+                  <p>
+                    Recibe asesoría experta.
+                  </p>
+                  <ul class="service-highlights">
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Rápido, seguro y con el mejor acompañamiento
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Gestión de clientes potenciales
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Negociación y asesoría legal
+                    </li>
+                  </ul>
+                  <!-- <a href="service-details.html" class="service-link">
+                    <span>Más información</span>
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a> -->
+                </div>
+                <div class="service-visual">
+                  <img
+                    src="assets/img/real-estate/property-exterior-4.webp"
+                    class="img-fluid"
+                    alt="Asesoría en inversiones"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Fin servicio -->
+          </div>
+
+          <div class="text-center" data-aos="zoom-in" data-aos-delay="600">
+            <a href="services.html" class="btn-view-all">
+              <span>Ver todos los servicios</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- /Featured Services Section -->
+
+      <!-- Featured Agents Section -->
+      <section id="featured-agents" class="featured-agents section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Agentes destacados</h2>
+          <p>
+            Contamos con agentes capacitados y comprometidos en ayudarte a tomar
+            las mejores decisiones. Cercanos, confiables y expertos en el
+            mercado local, están listos para brindarte atención personalizada.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4 justify-content-center">
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <div class="featured-agent">
+                <div class="agent-wrapper">
+                  <div class="agent-photo">
+                    <img
+                      src="assets/img/real-estate/agente01.jpeg"
+                      alt="Featured Agent"
+                      class="img-fluid"
+                    />
+                    <!-- <div class="overlay-info">
+                      <div class="contact-actions">
+                        <a
+                          href="tel:+14155678901"
+                          class="contact-btn phone"
+                          title="Call Now"
+                        >
+                          <i class="bi bi-telephone-fill"></i>
+                        </a>
+                        <a
+                          href="mailto:jennifer.adams@example.com"
+                          class="contact-btn email"
+                          title="Send Email"
+                        >
+                          <i class="bi bi-envelope-fill"></i>
+                        </a>
+                      </div>
+                    </div> -->
+                    <span class="achievement-badge">Agente Senior</span>
+                  </div>
+                  <div class="agent-details">
+                    <h4>Sergio Quintero</h4>
+                    <span class="position">Consultor Certificado</span>
+                    <div class="location-info">
+                      <i class="bi bi-geo-alt-fill"></i>
+                      <span>Cúcuta</span>
+                    </div>
+                    <div class="expertise-tags">
+                      <span class="tag">Experiencia Inmobiliaria</span>
+                      <span class="tag">Conocimiento Legal</span>
+                    </div>
+                    <!-- <a href="agent-profile.html" class="view-profile"
+                      >Ver perfil</a
+                    > -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Featured Agent -->
+
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="featured-agent">
+                <div class="agent-wrapper">
+                  <div class="agent-photo">
+                    <img
+                      src="assets/img/real-estate/agente02.jpg"
+                      alt="Featured Agent"
+                      class="img-fluid"
+                    />
+                    <div class="overlay-info">
+                      <!-- <div class="contact-actions">
+                        <a
+                          href="tel:+14155678902"
+                          class="contact-btn phone"
+                          title="Call Now"
+                        >
+                          <i class="bi bi-telephone-fill"></i>
+                        </a>
+                        <a
+                          href="mailto:marcus.hayes@example.com"
+                          class="contact-btn email"
+                          title="Send Email"
+                        >
+                          <i class="bi bi-envelope-fill"></i>
+                        </a>
+                      </div> -->
+                    </div>
+                    <span class="achievement-badge expert">Experto</span>
+                  </div>
+                  <div class="agent-details">
+                    <h4>Jose Miguel Reyes</h4>
+                    <span class="position"
+                      >Líder Comerciales</span
+                    >
+                    <div class="location-info">
+                      <i class="bi bi-geo-alt-fill"></i>
+                      <span>Cúcuta</span>
+                    </div>
+                    <div class="expertise-tags">
+                      <span class="tag">Asesoramiento</span>
+                      <span class="tag">Apoyo comercial</span>
+                    </div>
+                    <!-- <a href="agent-profile.html" class="view-profile"
+                      >Ver perfil</a
+                    > -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Featured Agent -->
+
+            <!-- <div
+              class="col-lg-3 col-md-6"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="featured-agent">
+                <div class="agent-wrapper">
+                  <div class="agent-photo">
+                    <img
+                      src="assets/img/real-estate/agent-5.webp"
+                      alt="Featured Agent"
+                      class="img-fluid"
+                    />
+                    <div class="overlay-info">
+                      <div class="contact-actions">
+                        <a
+                          href="tel:+14155678903"
+                          class="contact-btn phone"
+                          title="Call Now"
+                        >
+                          <i class="bi bi-telephone-fill"></i>
+                        </a>
+                        <a
+                          href="mailto:sophia.rivera@example.com"
+                          class="contact-btn email"
+                          title="Send Email"
+                        >
+                          <i class="bi bi-envelope-fill"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <span class="achievement-badge rising"
+                      >Estrella en Ascenso</span
+                    >
+                  </div>
+                  <div class="agent-details">
+                    <h4>Sophia Rivera</h4>
+                    <span class="position"
+                      >Especialista en Compradores Primerizos</span
+                    >
+                    <div class="location-info">
+                      <i class="bi bi-geo-alt-fill"></i>
+                      <span>San Francisco</span>
+                    </div>
+                    <div class="expertise-tags">
+                      <span class="tag">Condominios</span>
+                      <span class="tag">Compradores Jóvenes</span>
+                    </div>
+                    <a href="agent-profile.html" class="view-profile"
+                      >Ver perfil</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- End Featured Agent -->
+
+            <!-- <div
+              class="col-lg-3 col-md-6"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
+              <div class="featured-agent">
+                <div class="agent-wrapper">
+                  <div class="agent-photo">
+                    <img
+                      src="assets/img/real-estate/agent-9.webp"
+                      alt="Featured Agent"
+                      class="img-fluid"
+                    />
+                    <div class="overlay-info">
+                      <div class="contact-actions">
+                        <a
+                          href="tel:+14155678904"
+                          class="contact-btn phone"
+                          title="Call Now"
+                        >
+                          <i class="bi bi-telephone-fill"></i>
+                        </a>
+                        <a
+                          href="mailto:daniel.morrison@example.com"
+                          class="contact-btn email"
+                          title="Send Email"
+                        >
+                          <i class="bi bi-envelope-fill"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <span class="achievement-badge veteran">Veterano</span>
+                  </div>
+                  <div class="agent-details">
+                    <h4>Daniel Morrison</h4>
+                    <span class="position"
+                      >Asesor de Propiedades de Inversión</span
+                    >
+                    <div class="location-info">
+                      <i class="bi bi-geo-alt-fill"></i>
+                      <span>Austin</span>
+                    </div>
+                    <div class="expertise-tags">
+                      <span class="tag">Multi-Familiar</span>
+                      <span class="tag">Análisis de ROI</span>
+                    </div>
+                    <a href="agent-profile.html" class="view-profile"
+                      >Ver perfil</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- End Featured Agent -->
+          </div>
+
+          <!-- <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="500">
+            <a href="agents.html" class="discover-all-agents">
+              <span>Descubrir Todos los Agentes</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div> -->
+        </div>
+      </section>
+      <!-- /Featured Agents Section -->
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="testimonials section light-background">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Testimonios</h2>
+          <p>
+            Las experiencias de nuestros clientes hablan por nosotros. Conoce
+            cómo hemos ayudado a cientos de personas a cumplir su sueño de tener
+            casa propia o invertir con seguridad.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container">
+          <div class="testimonial-grid">
+            <div
+              class="testimonial-item"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <div class="testimonial-card">
+                <div class="testimonial-header">
+                  <!-- <div class="testimonial-image">
+                    <img
+                      src="assets/img/person/person-f-5.webp"
+                      class="img-fluid"
+                      alt="Testimonial 1"
+                    />
+                  </div> -->
+                  <div class="testimonial-meta">
+                    <h3>Sophia Martinez</h3>
+                    <h4>Directora Creativa</h4>
+                    <!-- <div class="company-logo">
+                      <i class="bi bi-building"></i>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="testimonial-body">
+                  <i class="bi bi-chat-quote-fill quote-icon"></i>
+                  <p>
+                   “Desde el primer contacto sentí que estaba en buenas manos. 
+                   Me ayudaron a encontrar el apartamento perfecto en menos de un mes.
+                    Me encantó la atención personalizada y la claridad en todo el proceso. ¡Los recomiendo totalmente!”
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="testimonial-item featured"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="testimonial-card">
+                <div class="testimonial-header">
+                  <!-- <div class="testimonial-image">
+                    <img
+                      src="assets/img/person/person-m-5.webp"
+                      class="img-fluid"
+                      alt="Testimonial 2"
+                    />
+                  </div> -->
+                  <div class="testimonial-meta">
+                    <h3>Alexander Wright</h3>
+                    <h4>CEO &amp; Founder</h4>
+                    <!-- <div class="company-logo">
+                      <i class="bi bi-buildings"></i>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="testimonial-body">
+                  <i class="bi bi-chat-quote-fill quote-icon"></i>
+                  <p>
+                    “Pensé que vender mi casa sería complicado, pero el equipo se encargó de todo. 
+                    En menos de dos semanas ya tenía ofertas serias. Me apoyaron incluso con los trámites notariales. 
+                    Son verdaderos profesionales.”
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="testimonial-item"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="testimonial-card">
+                <div class="testimonial-header">
+                  <!-- <div class="testimonial-image">
+                    <img
+                      src="assets/img/person/person-f-6.webp"
+                      class="img-fluid"
+                      alt="Testimonial 3"
+                    />
+                  </div> -->
+                  <div class="testimonial-meta">
+                    <h3>Isabella Kim</h3>
+                    <h4>Estratega de Producto</h4>
+                    <!-- <div class="company-logo">
+                      <i class="bi bi-building-check"></i>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="testimonial-body">
+                  <i class="bi bi-chat-quote-fill quote-icon"></i>
+                  <p>
+                   “Buscaba una propiedad para inversión y no tenía mucha experiencia. 
+                   Me ofrecieron asesoría legal y comercial clara, sin presión. 
+                   Compré con confianza y hoy estoy generando ingresos gracias a su orientación.”
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="testimonial-item"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
+              <div class="testimonial-card">
+                <div class="testimonial-header">
+                  <!-- <div class="testimonial-image">
+                    <img
+                      src="assets/img/person/person-m-6.webp"
+                      class="img-fluid"
+                      alt="Testimonial 4"
+                    />
+                  </div> -->
+                  <div class="testimonial-meta">
+                    <h3>James Cooper</h3>
+                    <h4>Líder Técnico</h4>
+                    <!-- <div class="company-logo">
+                      <i class="bi bi-building-gear"></i>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="testimonial-body">
+                  <i class="bi bi-chat-quote-fill quote-icon"></i>
+                  <p>
+                    “Siempre soñé con tener mi propio apartamento, pero me sentía abrumada por tantos trámites. 
+                    Gracias a su equipo, todo fue mucho más fácil de lo que imaginaba. 
+                    Me explicaron cada paso con paciencia y me ayudaron a conseguir una excelente financiación. Hoy ya tengo las llaves de mi nuevo hogar.”
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Testimonials Section -->
+
+      <!-- Why Us Section -->
+      <section id="why-us" class="why-us section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>¿Por qué elegirnos?</h2>
+          <p>
+           Con más de ocho años de experiencia en el mercado inmobiliario,
+            hemos construido una sólida reputación basada en la confianza, el conocimiento local y resultados comprobados.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+              <div class="content">
+                <h3>¿Por qué elegirnos?</h3>
+                <p>
+                 Nuestro equipo está conformado por expertos comprometidos que conocen a fondo cada vecindario, 
+                 sus tendencias y oportunidades, y están listos para acompañarte en todo el proceso.
+                </p>
+
+                <div class="features-list">
+                  <div class="feature-item d-flex align-items-center mb-3">
+                    <div class="icon-wrapper me-3">
+                      <i class="bi bi-check-circle-fill"></i>
+                    </div>
+                    <div>
+                      <h5>Acompañamiento personalizado</h5>
+                      <p>
+                        Nuestro equipo te guiará en cada paso del proceso,
+                        asegurando que tus necesidades sean atendidas de manera
+                        integral.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="feature-item d-flex align-items-center mb-3">
+                    <div class="icon-wrapper me-3">
+                      <i class="bi bi-shield-check"></i>
+                    </div>
+                    <div>
+                      <h5>Transparencia en cada gestión</h5>
+                      <p>
+                        Nos comprometemos a mantener una comunicación clara y
+                        abierta en cada paso del proceso.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="feature-item d-flex align-items-center mb-3">
+                    <div class="icon-wrapper me-3">
+                      <i class="bi bi-headset"></i>
+                    </div>
+                    <div>
+                      <h5>Conocimiento profundo del mercado</h5>
+                      <p>
+                        Nuestro equipo tiene un conocimiento profundo de los
+                        vecindarios, las tendencias de precios y las condiciones
+                        del mercado en su área.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="feature-item d-flex align-items-center mb-3">
+                    <div class="icon-wrapper me-3">
+                      <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+                    <div>
+                      <h5>Soluciones rápidas y efectivas</h5>
+                      <p>
+                        Nuestro equipo está capacitado para ofrecer soluciones
+                        rápidas y efectivas a cualquier desafío que pueda surgir
+                        durante el proceso de compra o venta.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <div class="cta-buttons mt-4">
+                  <a href="#" class="btn btn-primary me-3"
+                    >Leer Más Sobre Nosotros</a
+                  >
+                  <a href="#" class="btn btn-outline-primary"
+                    >Contactar a Nuestro Equipo</a
+                  >
+                </div> -->
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+              <div class="stats-section">
+                <div class="row gy-4">
+                  <div class="col-md-6">
+                    <div class="stat-card text-center">
+                      <div class="stat-icon mb-3">
+                        <i class="bi bi-house-door"></i>
+                      </div>
+                      <div class="stat-number">
+                        <span
+                          data-purecounter-start="0"
+                          data-purecounter-end="100"
+                          data-purecounter-duration="2"
+                          class="purecounter"
+                        ></span
+                        >+
+                      </div>
+                      <div class="stat-label">Hogares Vendidos</div>
+                      <p>
+                        Transacciones cerradas con éxito en todos los tipos de
+                        propiedades y rangos de precios.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="stat-card text-center">
+                      <div class="stat-icon mb-3">
+                        <i class="bi bi-people"></i>
+                      </div>
+                      <div class="stat-number">
+                        <span
+                          data-purecounter-start="0"
+                          data-purecounter-end="98"
+                          data-purecounter-duration="2"
+                          class="purecounter"
+                        ></span
+                        >%
+                      </div>
+                      <div class="stat-label">Satisfacción del Cliente</div>
+                      <p>
+                        Calidad de servicio excepcional valorada por nuestros
+                        propietarios e inversores satisfechos.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="stat-card text-center">
+                      <div class="stat-icon mb-3">
+                        <i class="bi bi-clock-history"></i>
+                      </div>
+                      <div class="stat-number">
+                        <span
+                          data-purecounter-start="0"
+                          data-purecounter-end="8"
+                          data-purecounter-duration="2"
+                          class="purecounter"
+                        ></span
+                        >+
+                      </div>
+                      <div class="stat-label">Años de Experiencia</div>
+                      <p>
+                        Dos décadas de experiencia navegando con éxito por
+                        condiciones de mercado cambiantes.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="stat-card text-center">
+                      <div class="stat-icon mb-3">
+                        <i class="bi bi-award"></i>
+                      </div>
+                      <div class="stat-number">
+                        <span
+                          data-purecounter-start="0"
+                          data-purecounter-end="45"
+                          data-purecounter-duration="2"
+                          class="purecounter"
+                        ></span
+                        >+
+                      </div>
+                      <div class="stat-label">Clientes</div>
+                      <p>
+                        Reconocimiento por excelencia en servicio inmobiliario y
+                        satisfacción del cliente.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <div class="testimonial-preview mt-5">
+                  <div class="testimonial-card">
+                    <div class="quote-icon mb-2">
+                      <i class="bi bi-quote"></i>
+                    </div>
+                    <p>
+                      "Trabajar con este equipo hizo que comprar nuestra primera
+                      casa fuera una experiencia sencilla. Su conocimiento del
+                      mercado local y dedicación para encontrar la propiedad
+                      perfecta superaron nuestras expectativas."
+                    </p>
+                    <div
+                      class="testimonial-author d-flex align-items-center mt-3"
+                    >
+                      <img
+                        src="assets/img/person/person-f-3.webp"
+                        alt="Client"
+                        class="author-image me-3"
+                      />
+                      <div>
+                        <h6>Sarah Martinez</h6>
+                        <span>Compradora de Vivienda por Primera Vez</span>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Why Us Section -->
+
+      <!-- Call To Action Section -->
+      <section
+        class="call-to-action-1 call-to-action section"
+        id="call-to-action"
+      >
+        <div
+          class="cta-bg"
+          style="
+            background-image: url('assets/img/real-estate/showcase-3.webp');
+          "
+        ></div>
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8">
+              <div class="cta-content text-center">
+                <h2>
+                  ¿Necesitas Ayuda para Encontrar la Propiedad de tus Sueños?
+                </h2>
+                <p>
+                  Te ofrecemos una gama de servicios especializados para acompañarte en cada etapa de tu proceso inmobiliario. 
+                  Nuestro compromiso es brindarte soluciones eficientes, confiables y personalizadas que se adapten a tus necesidades.
+                </p>
+
+                <div class="cta-buttons">
+                  <a
+                    href="https://wa.me/573194416135?text=Hola%2C%20estoy%20interesado%20en%20una%20propiedad."
+                    target="_blank"
+                    class="btn btn-success"
+                    style="background: #14c555"
+                    >Contáctanos Hoy<i class="bi bi-whatsapp"></i
+                  ></a>
+                </div>
+
+                <div class="cta-features">
+                  <div
+                    class="feature-item"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    <i class="bi bi-telephone-fill"></i>
+                    <span>Consulta Gratuita</span>
+                  </div>
+                  <div
+                    class="feature-item"
+                    data-aos="fade-up"
+                    data-aos-delay="250"
+                  >
+                    <i class="bi bi-clock-fill"></i>
+                    <span>Soporte 24/7</span>
+                  </div>
+                  <div
+                    class="feature-item"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
+                    <i class="bi bi-shield-check-fill"></i>
+                    <span>Expertos de Confianza</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End CTA Content -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Call To Action Section -->
+
+      <!-- Recent Blog Posts Section -->
+
+      <!-- /Recent Blog Posts Section -->
+    </main>
+
+    <footer id="footer" class="footer accent-background">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-7 col-md-12 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">Inmobiliaria</span>
+            </a>
+            <p>
+              Te ayudamos a hacer realidad el proyecto de vida que siempre imaginaste. 
+              Desde la compra de tu primer terreno hasta la construcción de tu hogar ideal, 
+              contamos con la experiencia y aliados que necesitas para comenzar.
+
+
+            </p>
+            <div class="social-links d-flex mt-4">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <!-- <div class="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+            </ul>
+          </div> -->
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Nuestros Servicios</h4>
+            <ul>
+              <li><a>Asesoría Inmobiliaria</a></li>
+              <li><a>Compra y Venta de Propiedades</a></li>
+              <li><a>Créditos</a></li>
+              <li><a>Acompañamiento legal</a></li>
+              
+            </ul>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-12 footer-contact text-center text-md-start"
+          >
+            <h4>Contactanos</h4>
+            <p>Norte de Santander</p>
+            <p>Cúcuta</p>
+            <p>Prados Norte</p>
+            <p class="mt-4">
+              <strong>Telefono:</strong> <span>+57 3194416135</span>
+            </p>
+            <p><strong>Email:</strong> <span>info@example.com</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span>
+          <strong class="px-1 sitename">Inmobiliaria</strong>
+          <span>Todos los derechos reservados</span>
+        </p>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by <a href="https://bootstrapmade.com/">apps</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/TUNUMERODEWHATSAPP?text=Hola,%20estoy%20interesado%20en%20una%20propiedad."
+      class="whatsapp-float"
+      target="_blank"
+    >
+      <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <a
+      href="https://wa.me/573194416135?text=Hola%2C%20estoy%20interesado%20en%20una%20propiedad."
+      target="_blank"
+      style="
+        position: fixed;
+        top: 120px;
+        right: 25px;
+        background: #14c555;
+        color: white;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        z-index: 1000;
+        text-decoration: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      "
+    >
+      <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

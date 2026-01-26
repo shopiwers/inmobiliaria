@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSpace - Test Slider Fix</title>
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <style>
+        body { padding: 20px; background: #f5f5f5; }
+        .test-container { background: white; padding: 30px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .slider-wrapper { position: relative; width: 100%; max-width: 600px; margin: 20px auto; }
+        .swiper { width: 100%; height: 400px; }
+        .swiper-slide { display: flex; align-items: center; justify-content: center; background: #e9ecef; font-size: 18px; color: #6c757d; font-weight: bold; }
+        .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .console { background: #1e1e1e; color: #0f0; padding: 15px; margin-top: 15px; font-family: 'Courier New', monospace; font-size: 12px; max-height: 250px; overflow-y: auto; border-radius: 4px; line-height: 1.4; }
+        .console .info { color: #0f0; }
+        .console .success { color: #00ff00; font-weight: bold; }
+        .console .error { color: #ff4444; font-weight: bold; }
+        .console .warning { color: #ffaa00; }
+        .console .dim { color: #888; }
+        
+        h1 { color: #333; margin-bottom: 30px; }
+        h2 { color: #555; margin-top: 20px; margin-bottom: 10px; font-size: 18px; }
+        .status { padding: 10px; margin-top: 10px; border-radius: 4px; }
+        .status.ok { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .status.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 HomeSpace Slider Fix - Verification Test</h1>
+        <p>Testing the fixed initSwiper() function with multiple sliders</p>
+
+        <!-- SLIDER 1: García Herreros -->
+        <div class="test-container">
+            <h2>📍 Property 1: García Herreros</h2>
+            <div class="slider-wrapper">
+                <div id="garciaherreros-gallery-slider" class="property-gallery-slider swiper init-swiper">
+                    <script type="application/json" class="swiper-config">
+                    {
+                        "loop": true,
+                        "speed": 600,
+                        "autoplay": { "delay": 5000 },
+                        "navigation": {
+                            "nextEl": ".garciaherreros-next",
+                            "prevEl": ".garciaherreros-prev"
+                        },
+                        "thumbs": {
+                            "swiper": "#garciaherreros-thumbnails-slider"
+                        }
+                    }
+                    </script>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">García Herreros - Slide 1</div>
+                        <div class="swiper-slide">García Herreros - Slide 2</div>
+                        <div class="swiper-slide">García Herreros - Slide 3</div>
+                        <div class="swiper-slide">García Herreros - Slide 4</div>
+                    </div>
+                    <div class="swiper-button-next garciaherreros-next"></div>
+                    <div class="swiper-button-prev garciaherreros-prev"></div>
+                </div>
+            </div>
+            <div class="thumbnail-gallery mt-3">
+                <div id="garciaherreros-thumbnails-slider" class="property-thumbnails-slider swiper init-swiper">
+                    <script type="application/json" class="swiper-config">
+                    {
+                        "loop": true,
+                        "spaceBetween": 10,
+                        "slidesPerView": 4,
+                        "freeMode": true,
+                        "watchSlidesProgress": true
+                    }
+                    </script>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Thumb 1</div>
+                        <div class="swiper-slide">Thumb 2</div>
+                        <div class="swiper-slide">Thumb 3</div>
+                        <div class="swiper-slide">Thumb 4</div>
+                    </div>
+                </div>
+            </div>
+            <div class="console" id="log-garciaherreros"><span class="dim">Waiting for initialization...</span></div>
+        </div>
+
+        <!-- SLIDER 2: Los Próceres -->
+        <div class="test-container">
+            <h2>📍 Property 2: Los Próceres</h2>
+            <div class="slider-wrapper">
+                <div id="losproceres-gallery-slider" class="property-gallery-slider swiper init-swiper">
+                    <script type="application/json" class="swiper-config">
+                    {
+                        "loop": true,
+                        "speed": 600,
+                        "autoplay": { "delay": 5000 },
+                        "navigation": {
+                            "nextEl": ".losproceres-next",
+                            "prevEl": ".losproceres-prev"
+                        },
+                        "thumbs": {
+                            "swiper": "#losproceres-thumbnails-slider"
+                        }
+                    }
+                    </script>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Los Próceres - Slide 1</div>
+                        <div class="swiper-slide">Los Próceres - Slide 2</div>
+                        <div class="swiper-slide">Los Próceres - Slide 3</div>
+                    </div>
+                    <div class="swiper-button-next losproceres-next"></div>
+                    <div class="swiper-button-prev losproceres-prev"></div>
+                </div>
+            </div>
+            <div class="thumbnail-gallery mt-3">
+                <div id="losproceres-thumbnails-slider" class="property-thumbnails-slider swiper init-swiper">
+                    <script type="application/json" class="swiper-config">
+                    {
+                        "loop": true,
+                        "spaceBetween": 10,
+                        "slidesPerView": 4,
+                        "freeMode": true,
+                        "watchSlidesProgress": true
+                    }
+                    </script>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Thumb 1</div>
+                        <div class="swiper-slide">Thumb 2</div>
+                        <div class="swiper-slide">Thumb 3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="console" id="log-losproceres"><span class="dim">Waiting for initialization...</span></div>
+        </div>
+
+        <!-- SLIDER 3: Natura -->
+        <div class="test-container">
+            <h2>📍 Property 3: Natura</h2>
+            <div class="slider-wrapper">
+                <div id="natura-gallery-slider" class="property-gallery-slider swiper init-swiper">
+                    <script type="application/json" class="swiper-config">
+                    {
+                        "loop": true,
+                        "speed": 600,
+                        "autoplay": { "delay": 5000 },
+                        "navigation": {
+                            "nextEl": ".natura-next",
+                            "prevEl": ".natura-prev"
+                        },
+                        "thumbs": {
+                            "swiper": "#natura-thumbnails-slider"
+                        }
+                    }
+                    </script>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Natura - Slide 1</div>
+                        <div class="swiper-slide">Natura - Slide 2</div>
+                        <div class="swiper-slide">Natura - Slide 3</div>
+                        <div class="swiper-slide">Natura - Slide 4</div>
+                        <div class="swiper-slide">Natura - Slide 5</div>
+                    </div>
+                    <div class="swiper-button-next natura-next"></div>
+                    <div class="swiper-button-prev natura-prev"></div>
+                </div>
+            </div>
+            <div class="thumbnail-gallery mt-3">
+                <div id="natura-thumbnails-slider" class="property-thumbnails-slider swiper init-swiper">
+                    <script type="application/json" class="swiper-config">
+                    {
+                        "loop": true,
+                        "spaceBetween": 10,
+                        "slidesPerView": 4,
+                        "freeMode": true,
+                        "watchSlidesProgress": true
+                    }
+                    </script>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Thumb 1</div>
+                        <div class="swiper-slide">Thumb 2</div>
+                        <div class="swiper-slide">Thumb 3</div>
+                        <div class="swiper-slide">Thumb 4</div>
+                        <div class="swiper-slide">Thumb 5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="console" id="log-natura"><span class="dim">Waiting for initialization...</span></div>
+        </div>
+
+        <div id="summary" style="background: white; padding: 20px; margin-top: 30px; border-radius: 8px; border-left: 4px solid #007bff;">
+            <h3>Summary</h3>
+            <div id="summary-content"></div>
+        </div>
+    </div>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    
+    <script>
+        const logs = {};
+        const results = {};
+
+        function log(sliderId, message, type = 'info') {
+            if (!logs[sliderId]) logs[sliderId] = [];
+            logs[sliderId].push({ message, type });
+            
+            const logElement = document.getElementById(`log-${sliderId}`);
+            if (logElement) {
+                let html = '';
+                logs[sliderId].forEach(log => {
+                    html += `<div class="${log.type}">${log.message}</div>`;
+                });
+                logElement.innerHTML = html;
+                logElement.scrollTop = logElement.scrollHeight;
+            }
+        }
+
+        /**
+         * Fixed initSwiper function - PRODUCTION VERSION
+         */
+        function initSwiper() {
+            console.log('🚀 initSwiper START');
+            
+            // Store initialized swiper instances by their selector
+            const swiperInstances = {};
+            
+            // First pass: Initialize gallery sliders with button elements instead of selectors
+            document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+                const elementId = swiperElement.id;
+                let config = JSON.parse(
+                    swiperElement.querySelector(".swiper-config").innerHTML.trim()
+                );
+
+                // Skip thumbnail sliders in first pass (they'll be handled in second pass or within gallery config)
+                if (swiperElement.classList.contains("property-thumbnails-slider")) {
+                    return;
+                }
+
+                const sliderName = elementId.replace('-gallery-slider', '');
+                log(sliderName, `<span class="info">Processing gallery slider: ${elementId}</span>`);
+
+                // Convert selector strings to actual DOM elements for navigation buttons
+                if (config.navigation) {
+                    if (config.navigation.nextEl && typeof config.navigation.nextEl === 'string') {
+                        const selector = config.navigation.nextEl;
+                        config.navigation.nextEl = swiperElement.querySelector(selector);
+                        log(sliderName, config.navigation.nextEl ? 
+                            `<span class="success">✓ Found nextEl: ${selector}</span>` : 
+                            `<span class="error">✗ Missing nextEl: ${selector}</span>`);
+                    }
+                    if (config.navigation.prevEl && typeof config.navigation.prevEl === 'string') {
+                        const selector = config.navigation.prevEl;
+                        config.navigation.prevEl = swiperElement.querySelector(selector);
+                        log(sliderName, config.navigation.prevEl ? 
+                            `<span class="success">✓ Found prevEl: ${selector}</span>` : 
+                            `<span class="error">✗ Missing prevEl: ${selector}</span>`);
+                    }
+                }
+
+                // Handle thumbs swiper reference
+                if (config.thumbs && config.thumbs.swiper && typeof config.thumbs.swiper === 'string') {
+                    const thumbsSelectorOrId = config.thumbs.swiper;
+                    const thumbsElement = document.querySelector(thumbsSelectorOrId);
+                    if (thumbsElement) {
+                        // Initialize the thumbs swiper if not already initialized
+                        if (!swiperInstances[thumbsSelectorOrId]) {
+                            try {
+                                let thumbsConfig = JSON.parse(
+                                    thumbsElement.querySelector(".swiper-config").innerHTML.trim()
+                                );
+                                swiperInstances[thumbsSelectorOrId] = new Swiper(thumbsElement, thumbsConfig);
+                                log(sliderName, `<span class="success">✓ Initialized thumbnail slider: ${thumbsSelectorOrId}</span>`);
+                            } catch(e) {
+                                log(sliderName, `<span class="error">✗ Error initializing thumbnails: ${e.message}</span>`);
+                            }
+                        }
+                        // Pass the initialized swiper instance
+                        config.thumbs.swiper = swiperInstances[thumbsSelectorOrId];
+                    } else {
+                        log(sliderName, `<span class="warning">⚠ Thumbs slider not found: ${thumbsSelectorOrId}</span>`);
+                    }
+                }
+
+                // Initialize the swiper
+                try {
+                    swiperInstances[elementId] = new Swiper(swiperElement, config);
+                    log(sliderName, `<span class="success">✓ Gallery slider initialized successfully!</span>`);
+                    results[sliderName] = 'SUCCESS';
+                } catch(e) {
+                    log(sliderName, `<span class="error">✗ Error initializing gallery: ${e.message}</span>`);
+                    results[sliderName] = 'ERROR: ' + e.message;
+                }
+            });
+
+            console.log('✅ initSwiper COMPLETE');
+            updateSummary();
+        }
+
+        function updateSummary() {
+            let html = '<table class="table table-sm">';
+            html += '<thead><tr><th>Property</th><th>Status</th></tr></thead><tbody>';
+            
+            Object.entries(results).forEach(([name, status]) => {
+                const isSuccess = status === 'SUCCESS';
+                const statusClass = isSuccess ? 'text-success' : 'text-danger';
+                const icon = isSuccess ? '✓' : '✗';
+                html += `<tr><td><strong>${name}</strong></td><td class="${statusClass}">${icon} ${status}</td></tr>`;
+            });
+            
+            html += '</tbody></table>';
+            document.getElementById('summary-content').innerHTML = html;
+        }
+
+        window.addEventListener("load", function() {
+            console.log('Page loaded');
+            log('garciaherreros', '<span class="dim">Initializing Swiper...</span>');
+            log('losproceres', '<span class="dim">Initializing Swiper...</span>');
+            log('natura', '<span class="dim">Initializing Swiper...</span>');
+            
+            setTimeout(() => {
+                initSwiper();
+            }, 100);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Test</title>
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <style>
+        body { padding: 20px; }
+        .test-section { margin: 40px 0; padding: 20px; border: 2px solid #ccc; }
+        .slider-container { position: relative; width: 100%; max-width: 500px; margin: 0 auto; }
+        .swiper { width: 100%; height: 300px; }
+        .swiper-slide { display: flex; align-items: center; justify-content: center; background: #f0f0f0; font-size: 24px; color: #999; }
+        .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+        .swiper-button-next, .swiper-button-prev { background-color: rgba(0,0,0,0.5); color: white; z-index: 10; }
+        .console-log { background: #222; color: #0f0; padding: 10px; margin-top: 10px; font-family: monospace; max-height: 200px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <h1>Slider Test - Debugging Multiple Sliders</h1>
+    
+    <!-- Test Slider 1 -->
+    <div class="test-section">
+        <h2>Slider 1 (garciaherreros)</h2>
+        <div class="slider-container">
+            <div id="test-slider-1" class="swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+                {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": { "delay": 5000 },
+                    "navigation": {
+                        "nextEl": ".test-slider-1-next",
+                        "prevEl": ".test-slider-1-prev"
+                    }
+                }
+                </script>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1-1</div>
+                    <div class="swiper-slide">Slide 1-2</div>
+                    <div class="swiper-slide">Slide 1-3</div>
+                </div>
+                <div class="swiper-button-next test-slider-1-next"></div>
+                <div class="swiper-button-prev test-slider-1-prev"></div>
+            </div>
+        </div>
+        <div class="console-log" id="log1">Waiting for load...</div>
+    </div>
+
+    <!-- Test Slider 2 -->
+    <div class="test-section">
+        <h2>Slider 2 (losproceres)</h2>
+        <div class="slider-container">
+            <div id="test-slider-2" class="swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+                {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": { "delay": 5000 },
+                    "navigation": {
+                        "nextEl": ".test-slider-2-next",
+                        "prevEl": ".test-slider-2-prev"
+                    }
+                }
+                </script>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 2-1</div>
+                    <div class="swiper-slide">Slide 2-2</div>
+                    <div class="swiper-slide">Slide 2-3</div>
+                </div>
+                <div class="swiper-button-next test-slider-2-next"></div>
+                <div class="swiper-button-prev test-slider-2-prev"></div>
+            </div>
+        </div>
+        <div class="console-log" id="log2">Waiting for load...</div>
+    </div>
+
+    <!-- Test Slider 3 -->
+    <div class="test-section">
+        <h2>Slider 3 (natura)</h2>
+        <div class="slider-container">
+            <div id="test-slider-3" class="swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+                {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": { "delay": 5000 },
+                    "navigation": {
+                        "nextEl": ".test-slider-3-next",
+                        "prevEl": ".test-slider-3-prev"
+                    }
+                }
+                </script>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 3-1</div>
+                    <div class="swiper-slide">Slide 3-2</div>
+                    <div class="swiper-slide">Slide 3-3</div>
+                </div>
+                <div class="swiper-button-next test-slider-3-next"></div>
+                <div class="swiper-button-prev test-slider-3-prev"></div>
+            </div>
+        </div>
+        <div class="console-log" id="log3">Waiting for load...</div>
+    </div>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    
+    <script>
+        function addLog(elementId, message) {
+            const el = document.getElementById(elementId);
+            if (el) {
+                el.innerHTML += message + '<br>';
+                el.scrollTop = el.scrollHeight;
+            }
+        }
+
+        /**
+         * Init swiper sliders - TESTING VERSION
+         */
+        function initSwiper() {
+            addLog('log1', 'INIT STARTED - Found ' + document.querySelectorAll(".init-swiper").length + ' sliders');
+            
+            document.querySelectorAll(".init-swiper").forEach(function(swiperElement, index) {
+                const sliderId = swiperElement.id || 'unknown-' + index;
+                addLog('log1', 'Processing slider: ' + sliderId);
+                
+                let config = JSON.parse(
+                    swiperElement.querySelector(".swiper-config").innerHTML.trim()
+                );
+                
+                addLog('log1', 'Config parsed: ' + JSON.stringify(config.navigation));
+
+                // Convert selector strings to actual DOM elements for navigation
+                if (config.navigation) {
+                    if (config.navigation.nextEl && typeof config.navigation.nextEl === 'string') {
+                        const selector = config.navigation.nextEl;
+                        const element = swiperElement.querySelector(selector);
+                        addLog('log1', 'Looking for nextEl: ' + selector + ' -> ' + (element ? 'FOUND' : 'NOT FOUND'));
+                        config.navigation.nextEl = element;
+                    }
+                    if (config.navigation.prevEl && typeof config.navigation.prevEl === 'string') {
+                        const selector = config.navigation.prevEl;
+                        const element = swiperElement.querySelector(selector);
+                        addLog('log1', 'Looking for prevEl: ' + selector + ' -> ' + (element ? 'FOUND' : 'NOT FOUND'));
+                        config.navigation.prevEl = element;
+                    }
+                }
+
+                try {
+                    const swiper = new Swiper(swiperElement, config);
+                    addLog('log1', 'Slider ' + sliderId + ' initialized successfully');
+                } catch(e) {
+                    addLog('log1', 'ERROR initializing ' + sliderId + ': ' + e.message);
+                }
+            });
+        }
+
+        window.addEventListener("load", function() {
+            addLog('log1', 'Page loaded, starting Swiper init');
+            initSwiper();
+            addLog('log2', 'Done!');
+            addLog('log3', 'Done!');
+        });
+    </script>
+</body>
+</html>
